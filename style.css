@@ -24,7 +24,7 @@ header {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('https://www.mein-schoener-garten.de/sites/default/files/bienen-honigwabe-3910267-blp-fotolia-rupbilder.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Behält den Parallax-Effekt auf dem Desktop bei */
     color: #fff;
 }
 
@@ -89,7 +89,7 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    align-items: center; /* Zentriert die Nav-Elemente vertikal */
+    align-items: center;
 }
 
 .nav-links li {
@@ -102,13 +102,12 @@ nav {
     font-weight: bold;
 }
 
-/* Styling für den neuen Quiz-Button */
 .nav-item-quiz a {
-    background-color: #FFB100; /* Gelber Hintergrund */
+    background-color: #FFB100;
     color: #6D4C41;
     padding: 8px 15px;
     border-radius: 50px;
-    border: 2px solid #FFB100; /* Gelbe Umrandung */
+    border: 2px solid #FFB100;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -212,8 +211,7 @@ nav {
     padding: 20px;
 }
 
-  /* Animierte Bienen */
-  .bee-animation {
+.bee-animation {
     position: relative;
     height: 150px;
     width: 100vw;
@@ -234,7 +232,7 @@ nav {
     background-position: center;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
     animation: fly 15s infinite linear;
-    left: -100px; /* Starting position off-screen */
+    left: -100px;
 }
 
 @keyframes fly {
@@ -260,7 +258,6 @@ nav {
     }
 }
 
-/* Reset all animation delays and ensure all bees move */
 .bee:nth-child(1) {
     animation: fly 14s infinite linear;
     top: 30px;
@@ -293,6 +290,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        background-attachment: scroll; /* KORREKTUR FÜR MOBILE GERÄTE */
+    }
+
     .nav-links {
         display: none;
         position: absolute;
